@@ -24,7 +24,7 @@
       <button @click="toggleAll">全部</button>
     </div>
     <div>
-      <button @click="refresh" style="font-size: 18px">刷新</button>
+      <button @click="refresh" style="font-size: 18px">查询</button>
     </div>
     <hr />
     <div
