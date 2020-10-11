@@ -1,4 +1,5 @@
-import { updateToLocal } from "./Utils";
+import { updateToLocal } from "./wh-fgj/index";
+import { download } from "./ke-xiaoqu/index";
 import express from "express";
 
 const PORT: number = parseInt(process.env.PORT) || 8083;
@@ -22,6 +23,12 @@ app.get("/api/get-data", (req, res) => {
     });
 });
 
+app.get("/api/ke-xiaoqu", (req, res) => {
+    download();
+    res.json({
+    });
+})
+
 app.listen(PORT, () => {
     console.log(`web server listen ${PORT}`);
-})
+});

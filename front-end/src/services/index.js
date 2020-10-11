@@ -30,7 +30,12 @@ export function getDataList() {
                 item.groups[res.district] = res;
             });
         });
-        localStorage.setItem(key, JSON.stringify(data));
+        try {
+            localStorage.setItem(key, JSON.stringify(data));
+        } catch (err) {
+            console.warn("localStorage.setItem error: ", err);
+            localStorage.clear();
+        }
         return data;
     });
 }
