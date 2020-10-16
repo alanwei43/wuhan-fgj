@@ -1,6 +1,8 @@
 import { updateToLocal } from "./wh-fgj/index";
-import { download } from "./ke-xiaoqu/index";
+import { createTable, dropTable, insert, query } from "./ke-xiaoqu/TableXiaoQu";
 import express from "express";
+import { fetchAllPages } from "./ke-xiaoqu";
+import { EventEmitter } from "events";
 
 const PORT: number = parseInt(process.env.PORT) || 8083;
 
@@ -23,11 +25,22 @@ app.get("/api/get-data", (req, res) => {
     });
 });
 
-app.get("/api/ke-xiaoqu", (req, res) => {
-    download();
-    res.json({
-    });
+app.get("/api/ke-xiaoqu", async (req, res) => {
+    // await dropTable();
+    // await createTable();
+    const all = await query()
+    res.json(all);
 })
+
+// fetchAllPages("wh").then(({ hub, start }) => {
+//     hub.on("load", ({ page, all }) => {
+//         console.log("load: ", page, all.length);
+//     });
+//     hub.on("success", ({ list }) => {
+//         insert(list);
+//     });
+//     start();
+// });
 
 app.listen(PORT, () => {
     console.log(`web server listen ${PORT}`);
