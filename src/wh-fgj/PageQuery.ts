@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import { parseHtml } from "../Utils";
+import { parseHtml } from "../utils";
 import { DayInfo } from "./DayInfo";
 
 export class PageQuery {

@@ -4,27 +4,37 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ts-node src/web.ts",
     "build": "tsc",
-    "start": "npm run build && node dist/web.js"
+    "start:web": "ts-node src/main.ts web 8083",
+    "start:job": "ts-node src/main.ts job"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
+    "cron": "^1.8.2",
     "express": "^4.17.1",
+    "mongodb": "^3.6.2",
     "node-fetch": "^2.6.1",
-    "sqlite3": "^5.0.0"
+    "ws": "^7.3.1",
+    "xlsx": "^0.16.8",
+    "yargs": "^16.1.0"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.0",
     "@types/cheerio": "^0.22.22",
-    "@types/express": "^4.17.2",
-    "@types/node": "^10.12.18",
+    "@types/cron": "^1.7.2",
+    "@types/express": "^4.17.8",
+    "@types/mongodb": "^3.5.28",
+    "@types/node": "^10.17.40",
     "@types/node-fetch": "^2.5.7",
-    "@types/sqlite3": "^3.1.6",
+    "@types/ws": "^7.2.7",
+    "@types/xlsx": "^0.0.36",
+    "@types/yargs": "^15.0.9",
     "ts-node": "^7.0.1",
-    "ts-node-dev": "^1.0.0-pre.32",
-    "typescript": "^3.2.4"
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^3.9.7"
   }
 }
